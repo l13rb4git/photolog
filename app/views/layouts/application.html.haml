@@ -12,22 +12,22 @@
 
   %body
 
-    %nav.navbar.navbar-inverse
+    %nav.navbar.navbar-expand-sm.navbar-dark.bg-dark
       .container
         .navbar-brand
           = link_to "Photo", root_path
           = link_to "log", root_path
         
         - if user_signed_in?
-          %ul.nav.navbar-nab.navbar-left
-            %li= link_to "New Photo", new_pic_path
-            %li= link_to "Settings", edit_user_registration_path
-            %li= link_to "Sign Out", destroy_user_session_path, method: :delete
+          %ul.navbar-nav.mr-auto
+            %li.nav-item= link_to "New Photo", new_pic_path, class: "nav-link"
+            %li.nav-item= link_to "Settings", edit_user_registration_path, class: "nav-link"
+            %li.nav-item= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "nav-link"
 
         - else
-          %ul.nav.navbar-nab.navbar-left
-            %li= link_to "Join", new_user_registration_path
-            %li= link_to "Log In", new_user_session_path
+          %ul.nav.navbar-nav.navbar-left
+            %li.nav-item= link_to "Join", new_user_registration_path, class: "nav-link"
+            %li.nav-item= link_to "Log In", new_user_session_path, class: "nav-link"
             
 
     .container 
