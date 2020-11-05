@@ -5,4 +5,7 @@
         .panel-heading
           %h2 Edit Photo
         .panel-body
+          %strong.center Current Image
+          .current-image
+            = image_tag @pic.image
           = render 'form'
