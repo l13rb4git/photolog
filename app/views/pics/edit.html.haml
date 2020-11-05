@@ -5,7 +5,5 @@
         .panel-heading
           %h2 Edit Photo
         .panel-body
-          %strong.center Current Image
-          .current-image
-            = image_tag @pic.image
+          %span{  src: polymorphic_url(@pic.image), id: "current-image" }
           = render 'form'
